@@ -7,10 +7,12 @@ const modalPortal = document.querySelector('#modal-portal');
 export default class Modal extends Component {
   componentDidMount() {
     window.addEventListener('keydown', this.handleOnClose);
+    document.body.style.position = 'fixed';
   }
 
   componentWillUnmount() {
     window.removeEventListener('keydown', this.handleOnClose);
+    document.body.style.overflow = 'unset';
   }
 
   handleOnClose = evt => {
