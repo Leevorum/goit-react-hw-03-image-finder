@@ -1,5 +1,6 @@
 import Modal from 'components/Modal/Modal';
 import { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export default class ImageGalleryItem extends Component {
   state = {
@@ -13,23 +14,26 @@ export default class ImageGalleryItem extends Component {
   };
 
   render() {
+    const { tags, webformatURL, largeImageURL } = this.props.image;
+
     return (
       <li className="ImageGalleryItem">
         <img
           className="ImageGalleryItem-image"
-          src={this.props.image.webformatURL}
-          alt={this.props.image.tags}
+          src={webformatURL}
+          alt={tags}
           onClick={this.handleOnClick}
         />
         {this.state.modalShow && (
           <Modal onClose={this.handleOnClick}>
-            <img
-              src={this.props.image.largeImageURL}
-              alt={this.props.image.tags}
-            />
+            <img src={largeImageURL} alt={tags} />
           </Modal>
         )}
       </li>
     );
   }
 }
+
+ImageGalleryItem.propType = {
+  image: PropTypes.object.isRequired,
+};

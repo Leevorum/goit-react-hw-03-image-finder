@@ -1,6 +1,7 @@
 import ImageGalleryItem from 'components/ImageGalleryItem/ImageGalleryItem';
+import PropTypes from 'prop-types';
 
-export default function GalleryRender({ images }) {
+export default function ImageGallery({ images }) {
   return (
     <ul className="ImageGallery">
       {images.map(image => (
@@ -9,3 +10,7 @@ export default function GalleryRender({ images }) {
     </ul>
   );
 }
+
+ImageGallery.propTypes = {
+  images: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
