@@ -12,7 +12,7 @@ export default class Modal extends Component {
 
   componentWillUnmount() {
     window.removeEventListener('keydown', this.handleOnClose);
-    document.body.style.overflow = 'unset';
+    document.body.style.position = 'unset';
   }
 
   handleOnClose = evt => {
