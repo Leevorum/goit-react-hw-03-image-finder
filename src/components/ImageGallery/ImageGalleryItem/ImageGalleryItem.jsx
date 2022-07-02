@@ -1,5 +1,6 @@
 import Modal from 'components/Modal/Modal';
 import { Component } from 'react';
+import s from './imageGalleryItem.module.css';
 import PropTypes from 'prop-types';
 
 export default class ImageGalleryItem extends Component {
@@ -17,9 +18,9 @@ export default class ImageGalleryItem extends Component {
     const { tags, webformatURL, largeImageURL } = this.props.image;
 
     return (
-      <li className="ImageGalleryItem">
+      <li className={s.ImageGalleryItem}>
         <img
-          className="ImageGalleryItem-image"
+          className={s.ImageGalleryItemImage}
           src={webformatURL}
           alt={tags}
           onClick={this.handleOnClick}

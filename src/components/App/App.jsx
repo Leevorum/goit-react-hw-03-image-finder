@@ -4,7 +4,7 @@ import getImages from 'service/api-servise';
 import ImageGallery from 'components/ImageGallery/ImageGallery';
 import Button from 'components/Button/Button';
 import Loader from 'components/Loader/Loader';
-import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
+import s from './app.module.css';
 
 export class App extends Component {
   state = {
@@ -68,7 +68,7 @@ export class App extends Component {
     const { images, isLoading } = this.state;
 
     return (
-      <div className="App">
+      <div className={s.App}>
         <Searchbar onSubmit={this.handleInput} />
         {images.length > 0 && (
           <>
